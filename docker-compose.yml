@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  postgress:
+  postgres_data:
     image: postgres:15
     container_name: postgres_db
     environment:
@@ -19,9 +19,9 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - DATABASE_URL: postgresql://lamadev:lama123456@localhost:5432/school
+      DATABASE_URL: postgresql://lamadev:lama123456@147.79.87.101:5432/school
     depends_on:
-      - postgres
+      - postgres_data
 
 volumes:
   postgres_data:
